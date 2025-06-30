@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIGHTS OUT OFF | Grunge Punk Sk8 Gótico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        /* ANIMAÇÃO DE ABERTURA JACKASS - CORRIGIDA E MAIS LONGA */
+        .jackass-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://media.discordapp.net/attachments/1115051011871096897/1178505670232916039/IMG_2172.gif);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 10000;
+            pointer-events: none;
+            animation: jackassAnimation 5s ease-in-out forwards;
+        }
+
+        @keyframes jackassAnimation { 
+            0% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            70% { 
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            100% { 
+                opacity: 0;
+                transform: scale(1.5);
+                visibility: hidden;
+            } 
+        }
+
+        /* VARIÁVEIS DE CORES */
+        :root {
+            --yellow: #ffff70;
+            --light-yellow: #FFFF99;
+            --red: #800000;
+            --black: #000000;
+            --white: #FFFFFF;
+            --artist:"LIGHTS OUT";
+            --title:"";
+        }
+
+        /* RESET E ESTILOS GERAIS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: url('http://www.rw-designer.com/cursor-view/97586.png'), auto;
+        }
+
+        a:hover {
+            cursor: url('http://www.rw-designer.com/cursor-view/124164.png'), auto;
+        }
+
+        body {
+            font-family: 'VT323', monospace;
+            background: url('https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/splatterbg.png') no-repeat fixed;
+            background-size: cover;
+            color: var(--light-yellow);
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+            font-size: 24px;
+            animation: textShadow 1.6s infinite;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Container principal para centralização vertical */
+        .site-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Efeito CRT - Tubo de raios catódicos */
+        body::after {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(18, 16, 16, 0.1);
+            opacity: 0;
+            z-index: 2;
+            pointer-events: none;
+            animation: flicker 0.15s infinite;
+        }
+
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                        linear-gradient(90deg, rgba(255, 255, 0, 0.06), rgba(255, 0, 0, 0.02), rgba(0, 0, 0, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        /* Efeito de grãos */
+        .grain-overlay {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/QpnTsrV.jpg');
+            opacity: 0.2;
+            animation: grain 8s steps(10) infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes grain {
+            0%, 100% { transform: translate(0, 0) }
+            10% { transform: translate(-5%, -10%) }
+            20% { transform: translate(-15%, 5%) }
+            30% { transform: translate(7%, -25%) }
+            40% { transform: translate(-5%, 25%) }
+            50% { transform: translate(-15%, 10%) }
+            60% { transform: translate(15%, 0%) }
+            70% { transform: translate(0%, 15%) }
+            80% { transform: translate(3%, 35%) }
+            90% { transform: translate(-10%, 10%) }
+        }
+
+        @keyframes flicker {
+            0% { opacity: 0.27861; }
+            5% { opacity: 0.34769; }
+            10% { opacity: 0.23604; }
+            15% { opacity: 0.90626; }
+            20% { opacity: 0.18128; }
+            25% { opacity: 0.83891; }
+            30% { opacity: 0.65583; }
+            35% { opacity: 0.67807; }
+            40% { opacity: 0.26559; }
+            45% { opacity: 0.84693; }
+            50% { opacity: 0.96019; }
+            55% { opacity: 0.08594; }
+            60% { opacity: 0.20313; }
+            65% { opacity: 0.71988; }
+            70% { opacity: 0.53455; }
+            75% { opacity: 0.37288; }
+            80% { opacity: 0.71428; }
+            85% { opacity: 0.70419; }
+            90% { opacity: 0.7003; }
+            95% { opacity: 0.36108; }
+            100% { opacity: 0.24387; }
+        }
+
+        @keyframes textShadow {
+            0% { text-shadow: 0.4389924193300864px 0 1px rgba(255, 255, 0, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            5% { text-shadow: 2.7928974010788217px 0 1px rgba(255, 255, 0, 0.5), -2.7928974010788217px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            10% { text-shadow: 0.02956275843481219px 0 1px rgba(255, 255, 0, 0.5), -0.02956275843481219px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            15% { text-shadow: 0.40218538552878136px 0 1px rgba(255, 255, 0, 0.5), -0.40218538552878136px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            20% { text-shadow: 3.4794037899852017px 0 1px rgba(255, 255, 0, 0.5), -3.4794037899852017px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            25% { text-shadow: 1.6125630401149584px 0 1px rgba(255, 255, 0, 0.5), -1.6125630401149584px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            30% { text-shadow: 0.7015590085143956px 0 1px rgba(255, 255, 0, 0.5), -0.7015590085143956px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            35% { text-shadow: 3.896914047650351px 0 1px rgba(255, 255, 0, 0.5), -3.896914047650351px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            40% { text-shadow: 3.870905614848819px 0 1px rgba(255, 255, 0, 0.5), -3.870905614848819px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            45% { text-shadow: 2.231056963361899px 0 1px rgba(255, 255, 0, 0.5), -2.231056963361899px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            50% { text-shadow: 0.08084290417898504px 0 1px rgba(255, 255, 0, 0.5), -0.08084290417898504px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            55% { text-shadow: 2.3758461067427543px 0 1px rgba(255, 255, 0, 0.5), -2.3758461067427543px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            60% { text-shadow: 2.202193051050636px 0 1px rgba(255, 255, 0, 0.5), -2.202193051050636px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            65% { text-shadow: 2.8638780614874975px 0 1px rgba(255, 255, 0, 0.5), -2.8638780614874975px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            70% { text-shadow: 0.48874025155497314px 0 1px rgba(255, 255, 0, 0.5), -0.48874025155497314px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            75% { text-shadow: 1.8948491305757957px 0 1px rgba(255, 255, 0, 0.5), -1.8948491305757957px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            80% { text-shadow: 0.0833037308038857px 0 1px rgba(255, 255, 0, 0.5), -0.0833037308038857px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            85% { text-shadow: 0.09769827255241735px 0 1px rgba(255, 255, 0, 0.5), -0.09769827255241735px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            90% { text-shadow: 3.443339761481782px 0 1px rgba(255, 255, 0, 0.5), -3.443339761481782px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            95% { text-shadow: 2.1841838852799786px 0 1px rgba(255, 255, 0, 0.5), -2.1841838852799786px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+            100% { text-shadow: 2.6208764473832513px 0 1px rgba(255, 255, 0, 0.5), -2.6208764473832513px 0 1px rgba(255, 0, 0, 0.3), 0 0 3px; }
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'VT323', monospace;
+            color: var(--light-yellow);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(255, 255, 153, 0.7);
+        }
+
+        p {
+            color: var(--light-yellow);
+            margin-bottom: 1rem;
+        }
+
+        
+
+        /* HEADER E NAVEGAÇÃO - MOLDURA ADICIONADA */
+        header {
+            background: var(--black);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: var(--yellow);
+            text-transform: uppercase;
+            position: relative;
+            font-family: 'VT323', monospace;
+            color: var(--light-yellow);
+            letter-spacing: 3px;
+            padding: 3px;
+            text-shadow: 
+                0 0 10px var(--yellow),
+                0 0 20px var(--red),
+                0 0 30px var(--red);
+            transform: skew(-5deg, -1deg);
+        }
+
+        @keyframes borderGlow {
+            0% { 
+                text-shadow: 0 0 5px var(--yellow), 0 0 10px var(--light-yellow);
+            }
+            100% { 
+                text-shadow: 0 0 15px var(--yellow), 0 0 25px var(--light-yellow);
+            }
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        nav li {
+            margin-left: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            padding: 0.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--light-yellow);
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 10px var(--red);
+        }
+
+        /* HERO SECTION - MOLDURA ADICIONADA */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9));
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            max-width: 1200px;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/QpnTsrV.jpg');
+            opacity: 0.3;
+            animation: grain 8s steps(10) infinite;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 900px;
+            padding: 40px;
+            transform: rotate(-1deg);
+        }
+
+        .hero h1 {
+            font-size: 6rem;
+            letter-spacing: 8px;
+            margin-bottom: 1.5rem;
+            color: var(--yellow);
+            animation: flicker 2s infinite alternate;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 
+                0 0 10px var(--yellow),
+                0 0 20px var(--red),
+                0 0 30px var(--red);
+            transform: skew(-5deg, -1deg);
+            margin-top: -10px;
+        }
+
+        .hero p {
+            font-size: 2.2rem;
+            max-width: 800px;
+            margin-bottom: 3rem;
+            color: var(--light-yellow);
+            text-shadow: 0 0 10px rgba(255, 255, 153, 0.7);
+            line-height: 1.4;
+            position: relative;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 4px solid var(--red);
+            border-right: 4px solid var(--red);
+        }
+
+        /* Social redes integrado */
+        .social-hero {
+            position: relative;
+            z-index: 10;
+            margin-top: 30px;
+            padding: 20px;
+            transform: rotate(2deg);
+        }
+
+        .social-label {
+            color: var(--light-yellow);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px var(--red);
+            position: relative;
+            display: inline-block;
+            padding: 5px 20px;
+            background: rgba(136, 0, 0, 0.2);
+        }
+
+        .social-links-large {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links-large a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 70px;
+            height: 70px;
+            background: var(--red);
+            color: var(--black);
+            border-radius: 50%;
+            font-size: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 4px solid var(--black);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px var(--red);
+        }
+
+        .social-links-large a:hover {
+            transform: translateY(-10px) scale(1.1);
+            background: var(--black);
+            color: var(--black);
+            box-shadow: 0 10px 25px var(--red);
+        }
+
+        .social-links-large a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--black), var(--red));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border-radius: 50%;
+        }
+
+        .social-links-large a:hover::before {
+            opacity: 0.5;
+        }
+
+        /* Elementos gráficos adicionais */
+        .grunge-element {
+            position: absolute;
+            z-index: 2;
+            opacity: 0.8;
+        }
+
+        .grunge-1 {
+            top: 10%;
+            left: 5%;
+            width: 200px;
+            height: 200px;
+            background: url('https://i.imgur.com/4sYJQ3A.png') no-repeat;
+            background-size: contain;
+            transform: rotate(-15deg);
+            filter: drop-shadow(0 0 10px var(--red));
+        }
+
+        .grunge-2 {
+            bottom: 20%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            background: url('https://i.imgur.com/9XJQZ0a.jpg') no-repeat;
+            background-size: contain;
+            transform: rotate(10deg);
+            border: 3px solid var(--red);
+            box-shadow: 0 0 15px var(--red);
+        }
+
+        .skate-graphic {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 100px;
+            background: url('https://i.imgur.com/5dXJQ0A.png') no-repeat center;
+            background-size: contain;
+            opacity: 0.7;
+            filter: drop-shadow(0 0 10px var(--yellow));
+        }
+
+        .hero-scratches {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.imgur.com/7dXJQ0A.png');
+            opacity: 0.3;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        /* SECTIONS - MOLDURA ADICIONADA */
+        section {
+            padding: 5rem 2rem;
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            margin-bottom: 3rem;
+            width: 100%;
+            max-width: 1200px;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            color: var(--light-yellow);
+            position: relative;
+            letter-spacing: 3px;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ABOUT SECTION */
+        .about-content {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            font-size: 1.4rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            flex: 1;
+            height: 400px;
+            background: url('https://i.imgur.com/2LDx2Uo.gif');
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* MEMBERS SECTION - Sem tremulação */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--red);
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .member-image {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            background: var(--black);
+            border-radius: 50%;
+            border: 3px solid var(--red);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .member-name {
+            font-size: 1.8rem;
+            color: var(--light-yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--white);
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--red);
+        }
+
+        /* CD PLAYER STYLES - MODIFICADO (AMARELO CLARO TROCADO POR PRETO) */
+        .status-bar,.title-bar,.title-bar-controls{display:flex}.window,
+        p#butt{background:silver;margin:auto}p#text,
+        p#text2{box-shadow:inset -1px -1px #fff,inset 1px 1px grey,inset -2px -2px #dfdfdf,inset 2px 2px #0a0a0a;
+        box-sizing:border-box;margin-block:3px}p#butt,p#text,p#text2{box-sizing:border-box}
+        p#label,p#text,p#text2{margin-block:3px}.status-bar,.title-bar-text,
+        .toptoptop,p#butt,p#label,p#text2{user-select:none}
+        @font-face{font-family:"Pixelated MS Sans Serif";font-style:normal;font-weight:400;
+        src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif.woff) 
+        format("woff");src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif.woff2) 
+        format("woff2")}@font-face{font-family:"Pixelated MS Sans Serif";
+        font-style:normal;font-weight:700;src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif_bold.woff)
+        format("woff");src:url(https://unpkg.com/98.css@0.1.20/dist/ms_sans_serif_bold.woff2)
+        format("woff2")}.window{text-shadow:none;box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #dfdfdf,
+        inset -2px -2px grey,inset 2px 2px #fff;padding:3px;margin: 40px auto 0;}.window 
+        img{filter:none!important}.window 
+        *{-webkit-font-smoothing:none;font-family:"Pixelated MS Sans Serif",Arial;font-size:11px;text-shadow:inherit}
+        .title-bar{align-items:center;background:linear-gradient(90deg,#000,#900);justify-content:space-between}
+        .title-bar-text{color:#fff;font-weight:700;letter-spacing:0;margin-right:24px;line-height:15px}
+        .title-bar-controls p#butt{display:block;min-height:14px;min-width:16px;padding:0}
+        .title-bar-controls p#butt:active{padding:0}.title-bar-controls p#butt:focus{outline:0}
+        .title-bar-controls p#butt.minimize{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");background-position:bottom 3px left 4px;background-repeat:no-repeat}
+        .title-bar-controls p#butt.maximize{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");background-position:top 2px left 3px;background-repeat:no-repeat}
+        .title-bar-controls p#butt.close{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E")
+        ;background-position:top 3px left 4px;background-repeat:no-repeat;margin-left:2px}.status-bar{gap:1px;margin:0 1px}
+        p#butt{white-space:nowrap;}.buttontos,p#butt,p#label,p#text,p#text2{display:inline-block}
+        .status-bar-field{box-shadow:inset -1px -1px #dfdfdf,inset 1px 1px grey;flex-grow:1;margin:0;padding:2px 3px}
+        .window-body{margin:8px}
+        p#butt{border:none;border-radius:0;min-height:23px;min-width:75px;padding:6px 12px 0;text-shadow:0 0 #222;
+            box-shadow:inset -1px -1px #0a0a0a,inset 1px 1px #fff,inset -2px -2px grey,inset 2px 2px #dfdfdf;
+            color:#000}p#butt:active{box-shadow:inset -1px -1px #fff,inset 1px 1px #0a0a0a,inset -2px -2px #dfdfdf,inset 2px 2px grey;text-shadow:1px 1px #222}p#butt:focus{outline:#000 dotted 1px;outline-offset:-4px}p#butt::-moz-focus-inner{border:0}.toptoptop{text-align:left;margin-top:-3px!important;margin-bottom:5px!important;margin-inline:0px!important;}.toptoptop span{border:1px solid silver;padding:2px 4px}.toptoptop span:hover{border-top:1px solid #fff;border-left:1px solid #fff;border-bottom:1px solid gray;border-right:1px solid gray}
+        .toptoptop span:focus{border:1px inset black}
+        .window{color:#000!important;font-family:"Pixelated MS Sans Serif"!important}
+        p#text:active{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h16v17H0V0zm1 16h14V1H1v15z' fill='gray'/%3E%3Cpath fill='silver' d='M1 1h14v15H1z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 7H5v1h1v1h1v1h1v1h1v-1h1V9h1V8h1V7z' fill='%23000'/%3E%3C/svg%3E")}p#text{background-color:rgb(255, 255, 255);padding:4px;width:85%;text-align:left;font-size:12px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 0H0v16h1V1h14V0z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 1H1v14h1V2h12V1H2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 17H0v-1h15V0h1v17z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 1h-1v14H1v1h14V1' fill='gray'/%3E%3Cpath fill='silver' d='M2 2h12v13H2z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 6H4v1h1v1h1v1h1v1h1V9h1V8h1V7h1V6z' fill='%23000'/%3E%3C/svg%3E");background-position:top 2px right 2px;background-repeat:no-repeat}p#text.artist:after{content:var(--artist)}p#text.title:after{content:var(--title)}
+        
+        /* MODIFICAÇÃO: Fundo preto e texto amarelo claro */
+        p#text2 {
+            position: relative;
+            padding: 13px 4px;
+            width: 54%;
+            font-size: 20px;
+            text-align: center;
+            color: var(--white); /* Texto amarelo claro */
+            background: #000; /* Fundo preto */
+            z-index: 999;
+        }
+        
+        p#text2:before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            background: var(--albumcover);
+            width: 98%;
+            height: 96%;
+            opacity: .5;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        
+        #butt,p#label{font-size:12px}p#label{width:fit-content;margin-right:5px}
+        .ahhh{text-align:right}.title-bar{padding:2px}
+        .title-bar-text img{vertical-align:bottom;margin-inline:2px}
+        .buttontos{width:45%;height:54px;vertical-align:top;text-align:center}
+        #butt{color:#000;text-shadow:1px 1px #fff;line-height:10px}
+        #butt:not(:first-child){text-indent:-5px;font-weight:700}
+        #butt:nth-child(3) span{display:block;transform:translate(2px,-2px) scale(1.2)}
+        #butt:not(:first-child,:nth-child(2),:nth-child(3))
+        {text-indent:-8px;font-weight:700;letter-spacing:-4px;font-size:10px}#butt:nth-child(8)
+        {text-indent:-8px;font-weight:700;letter-spacing:-1.5px;
+            white-space:nowrap;text-shadow:none;transform:translateY(1px)}
+            #butt:nth-child(8) span{display:block;transform:rotate(-90deg) translate(2px,0) scaleY(1.4);color:#000}
+            .title,.artist{height:23px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+                padding-right:20px!important;vertical-align: bottom;}
+
+        /* GALLERY SECTION */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            background: var(--black);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px var(--red);
+            z-index: 10;
+        }
+
+        /* COMMENTS SECTION */
+        .comments-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .comment-form {
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-yellow);
+            font-size: 1.4rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--red);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 1.2rem;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            background: var(--red);
+            color: var(--black);
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+        }
+
+        .submit-button:hover {
+            background: var(--yellow);
+            box-shadow: 0 0 15px var(--red);
+        }
+
+        .comment-list {
+            border-top: 2px solid var(--red);
+            padding-top: 2rem;
+        }
+
+        .comment {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--light-yellow);
+            font-size: 1.2rem;
+        }
+
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .comment-author {
+            color: var(--light-yellow);
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        .comment-date {
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+
+        .comment-text {
+            line-height: 1.6;
+        }
+
+        /* FOOTER - MOLDURA ADICIONADA */
+        footer {
+            background: var(--black);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            background-image: url('https://makesweet.com/f/1/4/f/14fb079b-d26f-4b2d-913d-1c5eb24b59f3.gif');
+            background-size: cover;
+            opacity: 0.8;
+            width: 100%;
+            max-width: 1200px;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1rem;
+        }
+
+        .copyright {
+            color: var(--light-yellow);
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Gato tocando guitarra */
+        .gato-guitarra {
+            position: fixed;
+            left: 13px;
+            top: 12px;
+            z-index: 200;
+            height: 100px;
+            transform: rotate(-5deg);
+            filter: drop-shadow(0 0 5px var(--red));
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-10px) rotate(-5deg); }
+            100% { transform: translateY(0) rotate(-5deg); }
+        }
+        
+        /* Efeitos adicionais - Sem tremulação */
+        .nineties1, .nineties2 {
+            animation: none;
+            transform: none;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
+        }
+        
+        /* Botões de seleção de música */
+        .track-btn {
+            background: var(--red);
+            color: var(--black);
+            border: none;
+            padding: 10px 15px;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .track-btn:hover {
+            background: var(--white);
+            box-shadow: 0 0 10px var(--red);
+        }
+        
+        .track-btn.active {
+            background: var(--yellow);
+            box-shadow: 0 0 15px var(--red);
+            font-weight: bold;
+        }
+
+         /* ESTILOS DA INTRO JACKASS */
+         .jackass-intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            animation: introOutro 4s ease-in-out forwards;
+        }
+        
+        .warning-card {
+            position: relative;
+            max-width: 100%;
+            max-height: 100%;
+            transform: scale(0.9);
+            animation: warningPulse 3s ease-in-out infinite;
+        }
+        
+        .warning-card img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        .warning-text {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-family: 'VT323', monospace;
+            color: #ffff70;
+            font-size: 2.5rem;
+            text-shadow: 0 0 15px #f00;
+            letter-spacing: 2px;
+            animation: textFlicker 0.8s infinite alternate;
+        }
+        
+        @keyframes introOutro {
+            0% { opacity: 0; transform: scale(1.1); }
+            20% { opacity: 1; transform: scale(1); }
+            80% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0.9); visibility: hidden; }
+        }
+    
+        
+        .window p, #butt p, .ahh p, .status-bar p{
+            color:#000;
+        }
+
+        /* ================ */
+        /* RESPONSIVIDADE */
+        /* ================ */
+        
+        /* Menu para dispositivos móveis */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 10;
+        }
+        
+        .menu-toggle span {
+            width: 30px;
+            height: 3px;
+            background: var(--light-yellow);
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        /* Nav responsiva */
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.8rem;
+            }
+            
+            .social-links-large a {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Menu responsivo */
+            .menu-toggle {
+                display: flex;
+            }
+            
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--black);
+                flex-direction: column;
+                padding: 1rem 0;
+                border: 10px solid;
+                border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+                text-align: center;
+                width: 100%;
+            }
+            
+            /* Header */
+            .nav-container {
+                position: relative;
+                padding: 1rem;
+            }
+            
+            .logo {
+                font-size: 2.5rem;
+            }
+            
+            /* Hero section */
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 3.5rem;
+                letter-spacing: 4px;
+            }
+            
+            .hero p {
+                font-size: 1.6rem;
+                padding: 10px;
+            }
+            
+            .social-label {
+                font-size: 1.5rem;
+            }
+            
+            .social-links-large {
+                gap: 1.2rem;
+            }
+            
+            .social-links-large a {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            /* Sections */
+            section {
+                padding: 3rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            /* About section */
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-text {
+                padding: 1.5rem;
+                font-size: 1.3rem;
+            }
+            
+            .about-image {
+                height: 300px;
+                width: 100%;
+            }
+            
+            /* Members section */
+            .members-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .member-card {
+                padding: 1rem;
+            }
+            
+            .member-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .member-name {
+                font-size: 1.6rem;
+            }
+            
+            .member-role {
+                font-size: 1.2rem;
+            }
+            
+            /* Music section */
+            .window {
+                width: 95% !important;
+                margin: 20px auto;
+            }
+            
+            .track-list button {
+                padding: 8px 12px;
+                font-size: 1.1rem;
+            }
+            
+            /* Gallery section */
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            
+            .gallery-item {
+                height: 180px;
+            }
+            
+            /* Footer */
+            footer {
+                padding: 1.5rem;
+            }
+            
+            .copyright {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Header */
+            .logo {
+                font-size: 2rem;
+            }
+            
+            /* Hero section */
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero p {
+                font-size: 1.4rem;
+            }
+            
+            .social-label {
+                font-size: 1.3rem;
+            }
+            
+            .social-links-large a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
+            
+            /* Sections */
+            section {
+                padding: 2rem 1rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            /* About section */
+            .about-text {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+            
+            .about-image {
+                height: 250px;
+            }
+            
+            /* Members section */
+            .members-grid {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            /* Music section */
+            .window-body p#text2 {
+                width: 80%;
+                font-size: 18px;
+            }
+            
+            .track-list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .track-list button {
+                width: 100%;
+            }
+            
+            /* Gallery section */
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 250px;
+            }
+            
+            /* Footer */
+            .footer-content {
+                padding: 0.8rem;
+            }
+            
+            .copyright {
+                font-size: 1rem;
+            }
+        }
+        
+        /* ======================== */
+        /* NOVOS EFEITOS DE GLITCH */
+        /* ======================== */
+        @keyframes glitch-animation {
+          0% { transform: translate(0); }
+          20% { transform: translate(-3px, 3px); }
+          40% { transform: translate(-3px, -3px); }
+          60% { transform: translate(3px, 3px); }
+          80% { transform: translate(3px, -3px); }
+          100% { transform: translate(0); }
+        }
+
+        @keyframes glitch-color-shift {
+          0% { filter: hue-rotate(0deg); }
+          20% { filter: hue-rotate(90deg); }
+          40% { filter: hue-rotate(180deg); }
+          60% { filter: hue-rotate(270deg); }
+          80% { filter: hue-rotate(360deg); }
+          100% { filter: hue-rotate(0deg); }
+        }
+
+        @keyframes glitch-distortion {
+          0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+          25% { clip-path: polygon(0 10%, 100% 15%, 100% 90%, 0 85%); }
+          50% { clip-path: polygon(0 25%, 100% 20%, 100% 75%, 0 80%); }
+          75% { clip-path: polygon(0 5%, 100% 5%, 100% 95%, 0 95%); }
+          100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        }
+
+        .social-links-large a {
+          position: relative;
+          overflow: hidden;
+          transform: translateZ(0);
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .social-links-large a:hover {
+          animation: 
+            glitch-animation 0.4s infinite,
+            glitch-color-shift 0.8s infinite;
+          transform: translateY(-10px) scale(1.1);
+          background: var(--black);
+          color: var(--black);
+          box-shadow: 0 0 20px var(--red), 0 0 30px var(--yellow);
+        }
+
+        .social-links-large a:hover::before {
+          animation: glitch-distortion 0.5s infinite;
+          opacity: 0.5;
+        }
+
+        .social-links-large a:hover::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            45deg, 
+            transparent 25%, 
+            rgba(255, 0, 0, 0.5) 25%, 
+            rgba(255, 0, 0, 0.5) 50%, 
+            transparent 50%, 
+            transparent 75%, 
+            rgba(255, 255, 0, 0.5) 75%
+          );
+          background-size: 10px 10px;
+          z-index: -1;
+          opacity: 0.8;
+          animation: glitch-animation 0.3s infinite reverse;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <!-- Animação de abertura Jackass -->
+    <div class="jackass-intro">
+        <div class="warning-card">
+            <img src="https://i.ytimg.com/vi/AnxxGmQosT8/hqdefault.jpg" alt="Aviso Jackass">
+            <div class="warning-text"></div>
+        </div>
+    </div>
+    
+    <div class="grain-overlay"></div>
+    
+    <div class="site-wrapper">
+        <!-- Gato tocando guitarra -->
+        <div class="gato-guitarra">
+            <img src="https://media.tenor.com/wCf-QCRfwmkAAAAi/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA-playing-guitar.gif" height="100"/>
+        </div>
+
+        <header>
+            <div class="nav-container">
+                <div class="logo">LIGHTS OUT OFF</div>
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#members">Membros</a></li>
+                        <li><a href="#music">Músicas</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#comments">Recados</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>LIGHTS OUT OFF</h1>
+                <p>se nem o Nirvana tocava bem. Por que deveriamos?
+                </p>
+                
+                <div class="social-hero">
+                    <div class="social-label">SIGA-NOS NAS REDES</div>
+                    <div class="social-links-large">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">Sobre a Banda</h2>
+            <div class="content">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>LIGHTS OUT nasceu nas ruas sombrias de São Paulo em 2017, quando quatro almas perdidas se encontraram em um beco atrás de um bar de rock. Combinando a melancolia do grunge com a energia crua do punk, nossa música é um grito de revolta e uma lamentação sombria.</p>
+                        <p>Inspirados pelo skate culture e pela estética gótica, criamos um som único que ecoa nas vielas e nos corações dos descontentes. Nossas letras falam de solidão urbana, rebeldia e a busca por significado em um mundo caótico.</p>
+                        <p>Em 2020, lançamos nosso primeiro álbum, "Eclipse Permanente", que rapidamente ganhou cult status na cena underground. Atualmente estamos trabalhando no segundo álbum, "Apagão", previsto para lançamento no final deste ano.</p>
+                    </div>
+                    <div class="about-image"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="members">
+            <h2 class="section-title">Membros</h2>
+            <div class="content">
+                <div class="members-grid">
+                    <div class="member-card">
+                        <div class="member-image"></div>
+                        <h3 class="member-name">Mako</h3>
+                        <p class="member-role">Vocal & Baixo</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-image"></div>
+                        <h3 class="member-name">João</h3>
+                        <p class="member-role">Baterista & Back Vocal</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-image"></div>
+                        <h3 class="member-name">...</h3>
+                        <p class="member-role">...</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="member-card">
+                        <div class="member-image"></div>
+                        <h3 class="member-name">Maria</h3>
+                        <p class="member-role">Vocal</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="music">
+            <h2 class="section-title">Músicas</h2>
+            <div class="content">
+                <!-- CD Player Funcional -->
+                <div class="window" style="width:320px">
+                    <div class="title-bar">
+                        <div class="title-bar-text"><img src="https://images2.imgbox.com/42/89/JIRoQjUo_o.png"/>CD Player</div>
+                        <div class="title-bar-controls">
+                            <p id="butt" class="minimize"></p>
+                            <p id="butt" class="maximize"></p>
+                            <p id="butt" class="close"></p>
+                        </div>
+                    </div>
+                    
+                    <div class="window-body">
+                        <p class="toptoptop"><span><u>D</u>isc</span> <span><u>V</u>iew</span> <span><u>O</u>ptions</span> <span><u>H</u>elp</span></p>
+                        <p id="text2">[01] 00:00</p>
+                        <div class="buttontos">
+                            <p id="butt" class="play-btn">▶ </p>
+                            <p id="butt" class="pause-btn" style="min-width:20px;max-width:20px;margin-inline:0px">❚❚ </p>
+                            <p id="butt" class="stop-btn" style="min-width:20px;max-width:20px"><span>◼</span> </p>
+                            <p id="butt" class="prev-btn" style="min-width:20px;max-width:20px;margin-top:5px">❚◄◄ </p>
+                            <p id="butt" class="next-btn" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px">►►❚ </p>
+                            <p id="butt" class="repeat-btn" style="min-width:20px;max-width:20px;margin-top:5px;margin-left:0px"><span>❚ ►</span></p>
+                        </div>
+                        <div style="margin-top: 10px;">
+                            <p id="label">Volume:</p>
+                            <input type="range" id="volume-control" min="0" max="1" step="0.1" value="0.7" style="width: 80%;color: #800000;" >
+                        </div>
+                        <div style="margin-top: 10px; background: #272727; padding: 3px; border: 2px inset;">
+                            <div id="progress-bar" style="height: 8px; background: #800000; width: 0%;"></div>
+                        </div>
+                        <div class="ahhh" style="margin-top: 10px;">
+                            <p id="label"><u>A</u>rtist:</p>
+                            <p id="text" class="artist"></p>
+                            <p id="label">Title:</p>
+                            <p id="text" class="title"></p>
+                        </div>
+                    </div>
+                    <div class="status-bar">
+                        <p class="status-bar-field total-play">Total Play: 00:00 m:s</p>
+                        <p class="status-bar-field track-time">Track: 00:00 m:s</p>
+                    </div>
+                </div>
+                
+                <!-- Lista de músicas para seleção -->
+                <div class="track-list" style="margin-top: 40px; text-align: center;">
+                    <h3 style="color: var(--light-yellow); margin-bottom: 20px;">Selecione uma Música:</h3>
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                        <button class="track-btn active" data-track="1" data-artist="LIGHTS OUT OFF" data-title="HEART">Heart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery">
+            <h2 class="section-title">Galeria de Fotos</h2>
+            <div class="content">
+                <div class="gallery-grid">
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comments">
+            <h2 class="section-title">Recados (Ainda não funciona)</h2>
+            <div class="content">
+                <div class="comments-container">
+                    <form class="comment-form">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Enviar Recado</button>
+                    </form>
+
+                    <div class="comment-list">
+                        <div class="comment">
+                            <div class="comment-header">
+                                <span class="comment-author">SkateGoth23</span>
+                                <span class="comment-date">10/06/2023</span>
+                            </div>
+                            <p class="comment-text">Vi vocês no show do parque de skate semana passada! F*da demais! Quando lança o álbum novo?</p>
+                        </div>
+                        
+                        <div class="comment">
+                            <div class="comment-header">
+                                <span class="comment-author">DarkRaven</span>
+                                <span class="comment-date">08/06/2023</span>
+                            </div>
+                            <p class="comment-text">"Eclipse Permanente" é a melhor música que ouvi esse ano. Vocês capturaram perfeitamente a vibe gótica com a energia punk.</p>
+                        </div>
+                        
+                        <div class="comment">
+                            <div class="comment-header">
+                                <span class="comment-author">PunkNotDead</span>
+                                <span class="comment-date">05/06/2023</span>
+                            </div>
+                            <p class="comment-text">Quando vão fazer show na capital? Tô querendo ver ao vivo essa fusão de sons que vocês fazem!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <div style="max-width: 100%; height: auto; position: fixed; right: 1px; bottom: 9px; z-index: 200;" id="instagram-popup">
+            <div style="position: relative;">
+                <a href="https://www.instagram.com/lights_out_off?igsh=MTUwcG0zODd1bzVweQ==" target="_blank">
+                    <img src="https://i.postimg.cc/hP7yFdp1/ipodwinner.gif" alt="Siga-nos no Instagram" style="max-width: 150px; height: auto;"/>
+                </a>
+                <button onclick="closePopup()" style="position: absolute; top: -10px; right: -10px; background: var(--red); color: white; border: none; border-radius: 50%; width: 25px; height: 25px; font-weight: bold; cursor: pointer; box-shadow: 0 0 5px black;">×</button>
+            </div>
+        </div>
+        
+        <script>
+            // Fechar o pop-up
+            function closePopup() {
+                document.getElementById('instagram-popup').style.display = 'none';
+                
+                // Armazenar no localStorage que o usuário fechou o pop-up
+                localStorage.setItem('instagramPopupClosed', 'true');
+            }
+            
+            // Verificar se o usuário já fechou o pop-up anteriormente
+            window.onload = function() {
+                if(localStorage.getItem('instagramPopupClosed') === 'true') {
+                    document.getElementById('instagram-popup').style.display = 'none';
+                }
+            };
+        </script>
+
+        <footer>
+            <div class="footer-content">
+                <div class="logo">LIGHTS OUT OFF</div>
+                <p></p>
+                <p class="copyright">&copy; 2025 LIGHTS OUT OFF. Todos os direitos foram roubados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Elemento de áudio oculto -->
+    <audio id="audio-player" style="display: none;"></audio>
+
+    <script>
+        // Menu responsivo
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        const navLinks = document.querySelectorAll('#navMenu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Remover animação de abertura após 6 segundos
+        setTimeout(() => {
+            const intro = document.querySelector('.jackass-intro');
+            if (intro) {
+                intro.style.display = 'none';
+            }
+        }, 6000);
+
+        // Efeito de distorção ao passar o mouse sobre os títulos
+        const titles = document.querySelectorAll('.section-title, .member-name');
+        titles.forEach(title => {
+            title.addEventListener('mouseover', () => {
+                title.style.textShadow = `0 0 10px ${getRandomColor()}, 0 0 20px ${getRandomColor()}`;
+                setTimeout(() => {
+                    title.style.textShadow = '';
+                }, 300);
+            });
+        });
+
+        function getRandomColor() {
+            const colors = [
+                '#FFFF00', '#FFFF99', '#FF0000', '#FFFFFF'
+            ];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Efeito de scroll suave para links âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Configuração do player de música
+        const audioPlayer = document.getElementById('audio-player');
+        const textElement = document.querySelector('#text2');
+        const artistElement = document.querySelector('.artist');
+        const titleElement = document.querySelector('.title');
+        const totalPlayElement = document.querySelector('.total-play');
+        const trackTimeElement = document.querySelector('.track-time');
+        const trackButtons = document.querySelectorAll('.track-btn');
+        const progressBar = document.getElementById('progress-bar');
+        const volumeControl = document.getElementById('volume-control');
+        
+        let isPlaying = false;
+        let currentTrack = 1;
+        let trackTime = 0;
+        let totalTime = 0;
+        let isRepeat = false;
+        let timer;
+        
+        // URLs das músicas (samples curtos para demonstração)
+        const tracks = {
+            1: { 
+                title: "HEART", 
+                artist: "LIGHTS OUT", 
+                src: "Nirvana - Heart.mp3",
+                duration: 180 // 3 minutos
+            },
+            2: { 
+                title: "Eclipse Permanente", 
+                artist: "LIGHTS OUT", 
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                duration: 150 // 2.5 minutos
+            },
+            3: { 
+                title: "Concreto e Lágrimas", 
+                artist: "LIGHTS OUT", 
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                duration: 210 // 3.5 minutos
+            },
+            4: { 
+                title: "Veludo Negro", 
+                artist: "LIGHTS OUT", 
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                duration: 195 // 3.25 minutos
+            }
+        };
+        
+        // Função para atualizar o tempo
+        function updateTime() {
+            if (isPlaying) {
+                trackTime = Math.floor(audioPlayer.currentTime);
+                const trackMinutes = Math.floor(trackTime / 60);
+                const trackSeconds = trackTime % 60;
+                
+                textElement.textContent = `[${currentTrack.toString().padStart(2, '0')}] ${trackMinutes.toString().padStart(2, '0')}:${trackSeconds.toString().padStart(2, '0')}`;
+                trackTimeElement.textContent = `Track: ${trackMinutes.toString().padStart(2, '0')}:${trackSeconds.toString().padStart(2, '0')} m:s`;
+                
+                // Atualizar barra de progresso
+                const progress = (trackTime / tracks[currentTrack].duration) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+        }
+        
+        // Função para atualizar o tempo total
+        function updateTotalTime() {
+            if (isPlaying) {
+                totalTime++;
+                const totalMinutes = Math.floor(totalTime / 60);
+                const totalSeconds = totalTime % 60;
+                totalPlayElement.textContent = `Total Play: ${totalMinutes.toString().padStart(2, '0')}:${totalSeconds.toString().padStart(2, '0')} m:s`;
+            }
+        }
+        
+        // Função para carregar e tocar uma faixa
+        function loadTrack(trackNumber) {
+            currentTrack = trackNumber;
+            audioPlayer.src = tracks[trackNumber].src;
+            audioPlayer.load();
+            updateTrackInfo();
+            trackTime = 0;
+            progressBar.style.width = '0%';
+            
+            if (isPlaying) {
+                audioPlayer.play();
+            }
+        }
+        
+        // Função para atualizar informações da faixa
+        function updateTrackInfo() {
+            titleElement.textContent = tracks[currentTrack].title;
+            artistElement.textContent = tracks[currentTrack].artist;
+            
+            // Atualizar botões ativos
+            trackButtons.forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.getAttribute('data-track')) === currentTrack) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+        
+        // Eventos para os botões do CD Player
+        document.querySelector('.play-btn').addEventListener('click', function() {
+            if (!isPlaying) {
+                isPlaying = true;
+                audioPlayer.play();
+                timer = setInterval(updateTime, 1000);
+                setInterval(updateTotalTime, 1000);
+                this.style.boxShadow = 'inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey';
+            }
+        });
+        
+        document.querySelector('.pause-btn').addEventListener('click', function() {
+            if (isPlaying) {
+                isPlaying = false;
+                audioPlayer.pause();
+                clearInterval(timer);
+                this.style.boxShadow = 'inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey';
+            }
+        });
+        
+        document.querySelector('.stop-btn').addEventListener('click', function() {
+            isPlaying = false;
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            clearInterval(timer);
+            trackTime = 0;
+            progressBar.style.width = '0%';
+            textElement.textContent = `[${currentTrack.toString().padStart(2, '0')}] 00:00`;
+            trackTimeElement.textContent = 'Track: 00:00 m:s';
+            this.style.boxShadow = 'inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey';
+        });
+        
+        document.querySelector('.prev-btn').addEventListener('click', function() {
+            if (currentTrack > 1) {
+                currentTrack--;
+            } else {
+                currentTrack = 4; // Volta para a última faixa
+            }
+            loadTrack(currentTrack);
+            this.style.boxShadow = 'inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey';
+            setTimeout(() => { this.style.boxShadow = ''; }, 300);
+        });
+        
+        document.querySelector('.next-btn').addEventListener('click', function() {
+            if (currentTrack < 4) {
+                currentTrack++;
+            } else {
+                currentTrack = 1; // Volta para a primeira faixa
+            }
+            loadTrack(currentTrack);
+            this.style.boxShadow = 'inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey';
+            setTimeout(() => { this.style.boxShadow = ''; }, 300);
+        });
+        
+        document.querySelector('.repeat-btn').addEventListener('click', function() {
+            isRepeat = !isRepeat;
+            if (isRepeat) {
+                this.style.boxShadow = 'inset -1px -1px #fff, inset 1px 1px #0a0a0a, inset -2px -2px #dfdfdf, inset 2px 2px grey';
+                this.innerHTML = '<span>❚ ❚</span>';
+            } else {
+                this.style.boxShadow = '';
+                this.innerHTML = '<span>❚ ►</span>';
+            }
+        });
+        
+        // Evento para quando a música terminar
+        audioPlayer.addEventListener('ended', function() {
+            if (isRepeat) {
+                audioPlayer.currentTime = 0;
+                audioPlayer.play();
+            } else if (currentTrack < 4) {
+                currentTrack++;
+                loadTrack(currentTrack);
+                audioPlayer.play();
+            } else {
+                isPlaying = false;
+                clearInterval(timer);
+                trackTime = 0;
+                textElement.textContent = `[${currentTrack.toString().padStart(2, '0')}] 00:00`;
+                trackTimeElement.textContent = 'Track: 00:00 m:s';
+                progressBar.style.width = '0%';
+            }
+        });
+        
+        // Controle de volume
+        volumeControl.addEventListener('input', function() {
+            audioPlayer.volume = this.value;
+        });
+        
+        // Botões de seleção de música
+        trackButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const trackNum = parseInt(this.getAttribute('data-track'));
+                loadTrack(trackNum);
+                
+                // Se estiver tocando, continua tocando a nova faixa
+                if (isPlaying) {
+                    audioPlayer.play();
+                }
+                
+                // Atualizar botões ativos
+                trackButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+        
+        // Inicializar informações da primeira faixa
+        loadTrack(1);
+    </script>
+</body>
+</html>
