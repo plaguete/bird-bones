@@ -77,16 +77,15 @@
             justify-content: center;
             min-height: 100vh;
             padding: 20px;
+            width: 100%;
+            overflow-y: auto;
         }
 
-        /* Container principal para centralização vertical */
+        /* Container principal corrigido */
         .site-wrapper {
-            max-width: 1200px;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
+            max-width: 1200px;
+            padding: 0 15px;
         }
 
         /* Efeito CRT - Tubo de raios catódicos */
@@ -209,9 +208,7 @@
             margin-bottom: 1rem;
         }
 
-        
-
-        /* HEADER E NAVEGAÇÃO - MOLDURA ADICIONADA */
+        /* HEADER E NAVEGAÇÃO - ESTILO ATUALIZADO */
         header {
             background: var(--black);
             padding: 1rem 0;
@@ -229,7 +226,11 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 15px;
+        }
+
+        #avMenu{
+            border: none;
         }
 
         .logo {
@@ -248,20 +249,13 @@
             transform: skew(-5deg, -1deg);
         }
 
-        @keyframes borderGlow {
-            0% { 
-                text-shadow: 0 0 5px var(--yellow), 0 0 10px var(--light-yellow);
-            }
-            100% { 
-                text-shadow: 0 0 15px var(--yellow), 0 0 25px var(--light-yellow);
-            }
+        nav{
+            border: none;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            border: 10px solid;
-            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
             background: rgba(0, 0, 0, 0.3);
         }
 
@@ -274,17 +268,22 @@
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             letter-spacing: 1px;
-            padding: 0.5rem;
+            padding: 0.8rem 1.2rem;
             position: relative;
             transition: all 0.3s ease;
+            display: block;
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--red);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
         }
 
         nav a:hover {
             color: var(--light-yellow);
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0 0 10px var(--red);
+            background: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 15px var(--red);
+            transform: translateY(-3px);
         }
 
         /* HERO SECTION - MOLDURA ADICIONADA */
@@ -429,73 +428,7 @@
             opacity: 0.5;
         }
 
-        /* Elementos gráficos adicionais */
-        .grunge-element {
-            position: absolute;
-            z-index: 2;
-            opacity: 0.8;
-        }
-
-        .grunge-1 {
-            top: 10%;
-            left: 5%;
-            width: 200px;
-            height: 200px;
-            background: url('https://i.imgur.com/4sYJQ3A.png') no-repeat;
-            background-size: contain;
-            transform: rotate(-15deg);
-            filter: drop-shadow(0 0 10px var(--red));
-        }
-
-        .grunge-2 {
-            bottom: 20%;
-            right: 5%;
-            width: 150px;
-            height: 150px;
-            background: url('https://i.imgur.com/9XJQZ0a.jpg') no-repeat;
-            background-size: contain;
-            transform: rotate(10deg);
-            border: 3px solid var(--red);
-            box-shadow: 0 0 15px var(--red);
-        }
-
-        .skate-graphic {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 300px;
-            height: 100px;
-            background: url('https://i.imgur.com/5dXJQ0A.png') no-repeat center;
-            background-size: contain;
-            opacity: 0.7;
-            filter: drop-shadow(0 0 10px var(--yellow));
-        }
-
-        .hero-scratches {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://i.imgur.com/7dXJQ0A.png');
-            opacity: 0.3;
-            pointer-events: none;
-            mix-blend-mode: overlay;
-        }
-
         /* SECTIONS - MOLDURA ADICIONADA */
-        section {
-            padding: 5rem 2rem;
-            position: relative;
-            background: rgba(0, 0, 0, 0.7);
-            margin-bottom: 3rem;
-            width: 100%;
-            max-width: 1200px;
-            border: 10px solid;
-            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
-        }
-
         .section-title {
             text-align: center;
             font-size: 3rem;
@@ -509,6 +442,51 @@
         .content {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* CORRENTES HORIZONTAIS - CORRIGIDAS */
+        .section-chains {
+            position: relative;
+            width: 100%; /* Alterado de 2000px para 100% */
+            height: 10px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            filter: brightness(rgb(71, 0, 0));
+            background-image: url(chains.gif);
+            background-repeat: repeat-x;
+        }
+
+        .section-chains.top {
+            margin-top: -10px;
+        }
+
+        .section-chains.bottom {
+            margin-bottom: -10px;
+        }
+
+        .section-chains img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            filter: 
+                drop-shadow(0 0 3px var(--red))
+                brightness(0.8);
+        }
+
+        /* Ajuste de posicionamento para compensar as margens negativas */
+        section {
+            padding: 1.5rem 15px;
+            position: relative;
+            background: rgba(0, 0, 0, 0.7);
+            margin-bottom: 0.5rem;
+            width: 100%;
+            max-width: 1200px;
+            border: 10px solid;
+            border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+            overflow: visible;
         }
 
         /* ABOUT SECTION */
@@ -570,6 +548,15 @@
             border: 3px solid var(--red);
             overflow: hidden;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .member-name {
@@ -635,7 +622,7 @@
         .toptoptop span:focus{border:1px inset black}
         .window{color:#000!important;font-family:"Pixelated MS Sans Serif"!important}
         p#text:active{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h16v17H0V0zm1 16h14V1H1v15z' fill='gray'/%3E%3Cpath fill='silver' d='M1 1h14v15H1z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 7H5v1h1v1h1v1h1v1h1v-1h1V9h1V8h1V7z' fill='%23000'/%3E%3C/svg%3E")}p#text{background-color:rgb(255, 255, 255);padding:4px;width:85%;text-align:left;font-size:12px;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 0H0v16h1V1h14V0z' fill='%23DFDFDF'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M2 1H1v14h1V2h12V1H2z' fill='%23fff'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 17H0v-1h15V0h1v17z' fill='%23000'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 1h-1v14H1v1h14V1' fill='gray'/%3E%3Cpath fill='silver' d='M2 2h12v13H2z'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11 6H4v1h1v1h1v1h1v1h1V9h1V8h1V7h1V6z' fill='%23000'/%3E%3C/svg%3E");background-position:top 2px right 2px;background-repeat:no-repeat}p#text.artist:after{content:var(--artist)}p#text.title:after{content:var(--title)}
-        
+
         /* MODIFICAÇÃO: Fundo preto e texto amarelo claro */
         p#text2 {
             position: relative;
@@ -647,7 +634,7 @@
             background: #000; /* Fundo preto */
             z-index: 999;
         }
-        
+
         p#text2:before {
             content: "";
             display: block;
@@ -662,7 +649,7 @@
             background-position: center;
             z-index: -1;
         }
-        
+
         #butt,p#label{font-size:12px}p#label{width:fit-content;margin-right:5px}
         .ahhh{text-align:right}.title-bar{padding:2px}
         .title-bar-text img{vertical-align:bottom;margin-inline:2px}
@@ -701,92 +688,221 @@
             z-index: 10;
         }
 
-        /* COMMENTS SECTION */
-        .comments-container {
-            max-width: 800px;
+        /* NEWS SECTION - Central de Notícias MODIFICADA */
+        .news-container {
+            max-width: 1000px;
             margin: 0 auto;
+            background: rgba(0, 0, 0, 0.6);
+            border: 3px solid var(--red);
+            padding: 20px;
+            position: relative;
         }
 
-        .comment-form {
-            margin-bottom: 3rem;
+        .news-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
+        .news-header h3 {
+            font-size: 2.5rem;
+            color: var(--light-yellow);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px var(--red);
+            position: relative;
+            display: inline-block;
+            padding: 0 15px;
+            background: rgba(136, 0, 0, 0.3);
+            transform: rotate(-2deg);
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .news-date {
+            color: var(--light-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .news-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 2px solid var(--red);
+            margin-bottom: 25px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            transform: rotate(0.5deg);
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .news-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+            border-color: var(--yellow);
+        }
+
+        .news-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.tenor.com/0Lp8lE2q9AkAAAAi/static.gif');
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .news-title {
+            color: var(--yellow);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .news-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--red), transparent);
+        }
+
+        .news-content {
             color: var(--light-yellow);
             font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
 
-        .form-control {
+        .news-image {
             width: 100%;
-            padding: 0.8rem;
-            background: rgba(0, 0, 0, 0.5);
+            height: 200px;
+            background-color: #222;
+            background-size: cover;
+            background-position: center;
+            margin: 15px 0;
             border: 1px solid var(--red);
-            color: var(--white);
-            font-family: inherit;
-            font-size: 1.2rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
+        .news-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.pinimg.com/originals/5b/0d/4e/5b0d4e0b0e8c3f8f0e0e6c3f8f0e0e6c3.gif');
+            opacity: 0.3;
         }
 
-        .submit-button {
-            background: var(--red);
-            color: var(--black);
-            border: none;
-            padding: 1rem 2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'VT323', monospace;
-            font-size: 1.4rem;
-        }
-
-        .submit-button:hover {
-            background: var(--yellow);
-            box-shadow: 0 0 15px var(--red);
-        }
-
-        .comment-list {
-            border-top: 2px solid var(--red);
-            padding-top: 2rem;
-        }
-
-        .comment {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-left: 3px solid var(--light-yellow);
-            font-size: 1.2rem;
-        }
-
-        .comment-header {
+        .news-footer {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1rem;
+            align-items: center;
+            margin-top: 15px;
+            border-top: 1px dashed var(--red);
+            padding-top: 10px;
         }
 
-        .comment-author {
-            color: var(--light-yellow);
-            font-weight: bold;
-            font-size: 1.4rem;
+        .news-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
-        .comment-date {
-            color: var(--white);
+        .news-tag {
+            background: var(--red);
+            color: var(--black);
+            padding: 4px 10px;
             font-size: 1.2rem;
+            border-radius: 2px;
         }
 
-        .comment-text {
-            line-height: 1.6;
+        .news-share {
+            display: flex;
+            gap: 10px;
+        }
+
+        .news-share a {
+            color: var(--light-yellow);
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+        }
+
+        .news-share a:hover {
+            color: var(--yellow);
+            transform: scale(1.2);
+        }
+
+        .news-pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .news-page-btn {
+            background: var(--black);
+            color: var(--light-yellow);
+            border: 1px solid var(--red);
+            padding: 8px 15px;
+            font-family: 'VT323', monospace;
+            font-size: 1.4rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .news-page-btn:hover, .news-page-btn.active {
+            background: var(--red);
+            color: var(--black);
+            box-shadow: 0 0 10px var(--red);
+        }
+
+        .page-indicator {
+            color: var(--light-yellow);
+            font-size: 1.4rem;
+            padding: 0 10px;
+        }
+
+        /* Efeitos de notícia */
+        .breaking-news {
+            animation: breakingPulse 2s infinite;
+            border: 3px solid var(--yellow);
+        }
+
+        @keyframes breakingPulse {
+            0% { box-shadow: 0 0 5px var(--yellow); }
+            50% { box-shadow: 0 0 20px var(--yellow); }
+            100% { box-shadow: 0 0 5px var(--yellow); }
+        }
+
+        .breaking-label {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--red);
+            color: var(--black);
+            padding: 5px 10px;
+            font-weight: bold;
+            transform: rotate(10deg);
+            z-index: 10;
         }
 
         /* FOOTER - MOLDURA ADICIONADA */
@@ -817,7 +933,7 @@
             font-size: 1.2rem;
         }
 
-        /* Gato tocando guitarra */
+        /* Gato tocando guitarra - POSICIONAMENTO CORRIGIDO */
         .gato-guitarra {
             position: fixed;
             left: 13px;
@@ -828,24 +944,13 @@
             filter: drop-shadow(0 0 5px var(--red));
             animation: float 3s ease-in-out infinite;
         }
-        
+
         @keyframes float {
             0% { transform: translateY(0) rotate(-5deg); }
             50% { transform: translateY(-10px) rotate(-5deg); }
             100% { transform: translateY(0) rotate(-5deg); }
         }
-        
-        /* Efeitos adicionais - Sem tremulação */
-        .nineties1, .nineties2 {
-            animation: none;
-            transform: none;
-        }
-        
-        .member-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.3);
-        }
-        
+
         /* Botões de seleção de música */
         .track-btn {
             background: var(--red);
@@ -859,12 +964,12 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .track-btn:hover {
             background: var(--white);
             box-shadow: 0 0 10px var(--red);
         }
-        
+
         .track-btn.active {
             background: var(--yellow);
             box-shadow: 0 0 15px var(--red);
@@ -885,7 +990,7 @@
             z-index: 9999;
             animation: introOutro 4s ease-in-out forwards;
         }
-        
+
         .warning-card {
             position: relative;
             max-width: 100%;
@@ -893,14 +998,14 @@
             transform: scale(0.9);
             animation: warningPulse 3s ease-in-out infinite;
         }
-        
+
         .warning-card img {
             display: block;
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
         }
-        
+
         .warning-text {
             position: absolute;
             bottom: 20px;
@@ -914,23 +1019,148 @@
             letter-spacing: 2px;
             animation: textFlicker 0.8s infinite alternate;
         }
-        
+
         @keyframes introOutro {
             0% { opacity: 0; transform: scale(1.1); }
             20% { opacity: 1; transform: scale(1); }
             80% { opacity: 1; transform: scale(1); }
             100% { opacity: 0; transform: scale(0.9); visibility: hidden; }
         }
-    
-        
+
+
         .window p, #butt p, .ahh p, .status-bar p{
             color:#000;
+        }
+
+        /* ======================== */
+        /* SCROLL PERSONALIZADO */
+        /* ======================== */
+        body::-webkit-scrollbar {
+            width: 16px;
+            height: 16px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFElEQVQIW2M4fPz0////GYAYyAIASnoKpV3w4kgAAAAASUVORK5CYII=");
+            image-rendering: pixelated;
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        body::-webkit-scrollbar-track:active {
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAEElEQVQIW2No6+pjgAAgCwAWogM9VKrgGQAAAABJRU5ErkJggg==");
+            -webkit-filter: grayscale(100%);
+            -moz-filter: grayscale(100%);
+            -ms-filter: grayscale(100%);
+            -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        body::-webkit-scrollbar-thumb {
+            border-top: 1px solid #cccccc;
+            border-left: 1px solid #cccccc;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            box-shadow: inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+            width: 16px;
+            height: 16px;
+            background-color: #cccccc;
+            z-index: 1;
+        }
+
+        body::-webkit-scrollbar-corner {
+            background-color: #cccccc;
+        }
+
+        body::-webkit-resizer {
+            width: 16px;
+            height: 16px;
+            background-color: #cccccc;
+            background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAN0lEQVR4Ae3MgQUAMBRDwU5fFF05lb/CARTBw2Ulof0DxPtcwp3hNuEYnjbcEW4TjuFpwx3h9gMWGgZ2Y/PT2gAAAABJRU5ErkJggg==");
+            background-position: bottom right;
+            background-repeat: no-repeat;
+            image-rendering: pixelated;
+        }
+
+        body::-webkit-scrollbar-button, body::-webkit-scrollbar-button {
+            border-top: 1px solid #cccccc;
+            border-left: 1px solid #cccccc;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            box-shadow: inset 1px 1px 0 0 white, inset -1px -1px 0 0 #868a8e;
+            display: block;
+            width: 16px;
+            height: 16px;
+            background-color: #cccccc;
+            image-rendering: pixelated;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        body::-webkit-scrollbar-button:active, body::-webkit-scrollbar-button:active {
+            background-position: 2px 2px;
+        }
+
+        body::-webkit-scrollbar-button:horizontal:decrement, body::-webkit-scrollbar-button:horizontal:decrement {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='6' height='2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M0 0h6v2H0z'/%3E%3C/svg%3E");
+        }
+
+        body::-webkit-scrollbar-button:horizontal:increment, body::-webkit-scrollbar-button:horizontal:increment {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9 0H0v9h9V0zM8 2H1v6h7V2z' fill='%23000'/%3E%3C/svg%3E");
+        }
+
+        body::-webkit-scrollbar-button:vertical:decrement, body::-webkit-scrollbar-button:vertical:decrement {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+        }
+
+        body::-webkit-scrollbar-button:vertical:increment, body::-webkit-scrollbar-button:vertical:increment {
+            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+        }
+
+        body::-webkit-scrollbar-button:horizontal:increment:start, body::-webkit-scrollbar-button:horizontal:increment:start {
+            display: none;
+        }
+
+        body::-webkit-scrollbar-button:horizontal:decrement:end, body::-webkit-scrollbar-button:horizontal:decrement:end {
+            display: none;
+        }
+
+        body::-webkit-scrollbar-button:vertical:increment:start, body::-webkit-scrollbar-button:vertical:increment:start {
+            display: none;
+        }
+
+        body::-webkit-scrollbar-button:vertical:decrement:end, body::-webkit-scrollbar-button:vertical:decrement:end {
+            display: none;
+        }
+
+        ::-webkit-scrollbar-button:active, ::-webkit-scrollbar-button:active {
+            border-top: 1px solid #868a8e;
+            border-left: 1px solid #868a8e;
+            border-bottom: 1px solid #868a8e;
+            border-right: 1px solid #868a8e;
+            box-shadow: none;
+        }
+
+        /* Ajuste do scroll para mobile */
+        @media (max-width: 768px) {
+            body::-webkit-scrollbar {
+                width: 8px;
+            }
+            body::-webkit-scrollbar-thumb {
+                background-color: var(--red);
+            }
+            body::-webkit-scrollbar-track {
+                background: rgba(0,0,0,0.3);
+            }
         }
 
         /* ================ */
         /* RESPONSIVIDADE */
         /* ================ */
-        
+
         /* Menu para dispositivos móveis */
         .menu-toggle {
             display: none;
@@ -944,7 +1174,7 @@
             padding: 0;
             z-index: 10;
         }
-        
+
         .menu-toggle span {
             width: 30px;
             height: 3px;
@@ -952,13 +1182,13 @@
             display: block;
             transition: all 0.3s ease;
         }
-        
+
         /* Nav responsiva */
         nav ul {
             display: flex;
             flex-wrap: wrap;
         }
-        
+
         /* Media Queries */
         @media (max-width: 1024px) {
             .hero h1 {
@@ -974,8 +1204,17 @@
                 height: 60px;
                 font-size: 1.8rem;
             }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                height: 300px;
+                width: 100%;
+            }
         }
-        
+
         @media (max-width: 768px) {
             /* Menu responsivo */
             .menu-toggle {
@@ -993,6 +1232,7 @@
                 padding: 1rem 0;
                 border: 10px solid;
                 border-image: url("https://file.garden/ZlrOeIgXzRtJW4z6/vampiresmile/sq3.png") 20% round;
+                z-index: 1000;
             }
             
             nav ul.active {
@@ -1000,15 +1240,21 @@
             }
             
             nav li {
-                margin: 0.5rem 0;
+                margin: 0;
                 text-align: center;
                 width: 100%;
+            }
+            
+            nav a {
+                display: block;
+                margin: 0.5rem auto;
+                width: 90%;
             }
             
             /* Header */
             .nav-container {
                 position: relative;
-                padding: 1rem;
+                padding: 1rem 15px;
             }
             
             .logo {
@@ -1025,6 +1271,7 @@
             .hero h1 {
                 font-size: 3.5rem;
                 letter-spacing: 4px;
+                padding: 0 15px;
             }
             
             .hero p {
@@ -1048,27 +1295,13 @@
             
             /* Sections */
             section {
-                padding: 3rem 1rem;
+                padding: 3rem 15px;
             }
             
             .section-title {
                 font-size: 2.5rem;
                 margin-bottom: 2rem;
-            }
-            
-            /* About section */
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-text {
-                padding: 1.5rem;
-                font-size: 1.3rem;
-            }
-            
-            .about-image {
-                height: 300px;
-                width: 100%;
+                padding: 0 15px;
             }
             
             /* Members section */
@@ -1100,7 +1333,7 @@
                 margin: 20px auto;
             }
             
-            .track-list button {
+            .track-btn {
                 padding: 8px 12px;
                 font-size: 1.1rem;
             }
@@ -1114,16 +1347,36 @@
                 height: 180px;
             }
             
-            /* Footer */
-            footer {
-                padding: 1.5rem;
+            /* News section */
+            .news-card {
+                padding: 15px;
             }
             
-            .copyright {
-                font-size: 1.1rem;
+            .news-title {
+                font-size: 1.6rem;
+            }
+            
+            .news-content {
+                font-size: 1.2rem;
+            }
+            
+            .news-footer {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            
+            /* Footer badges */
+            .footer-badges {
+                justify-content: center;
+                gap: 5px;
+            }
+            
+            .footer-badge img {
+                height: 25px;
             }
         }
-        
+
         @media (max-width: 480px) {
             /* Header */
             .logo {
@@ -1133,10 +1386,13 @@
             /* Hero section */
             .hero h1 {
                 font-size: 2.8rem;
+                line-height: 1.2;
+                padding: 0 10px;
             }
             
             .hero p {
                 font-size: 1.4rem;
+                padding: 8px;
             }
             
             .social-label {
@@ -1151,11 +1407,12 @@
             
             /* Sections */
             section {
-                padding: 2rem 1rem;
+                padding: 2rem 10px;
             }
             
             .section-title {
                 font-size: 2.2rem;
+                padding: 0 10px;
             }
             
             /* About section */
@@ -1187,7 +1444,7 @@
                 gap: 10px;
             }
             
-            .track-list button {
+            .track-btn {
                 width: 100%;
             }
             
@@ -1200,92 +1457,96 @@
                 height: 250px;
             }
             
-            /* Footer */
-            .footer-content {
-                padding: 0.8rem;
+            /* News section */
+            .news-container {
+                padding: 15px;
             }
             
-            .copyright {
-                font-size: 1rem;
+            .news-card {
+                padding: 10px;
+            }
+            
+            .news-title {
+                font-size: 1.5rem;
+            }
+            
+            .news-content {
+                font-size: 1.1rem;
+            }
+            
+            .news-image {
+                height: 150px;
+            }
+            
+            .news-footer {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            
+            .news-pagination {
+                flex-direction: column;
+            }
+            
+            /* Gato tocando guitarra */
+            .gato-guitarra {
+                height: 70px;
+            }
+            
+            /* Instagram popup */
+            #instagram-popup {
+                position: fixed;
+                left: 10px;
+                right: auto;
+                bottom: 10px;
+                top: auto;
+                max-width: 120px;
+                margin-right: 0;
+                z-index: 1000;
+            }
+            
+            #instagram-popup button {
+                top: -5px;
+                right: -5px;
+                width: 20px;
+                height: 20px;
+                font-size: 12px;
             }
         }
-        
-        /* ======================== */
-        /* NOVOS EFEITOS DE GLITCH */
-        /* ======================== */
-        @keyframes glitch-animation {
-          0% { transform: translate(0); }
-          20% { transform: translate(-3px, 3px); }
-          40% { transform: translate(-3px, -3px); }
-          60% { transform: translate(3px, 3px); }
-          80% { transform: translate(3px, -3px); }
-          100% { transform: translate(0); }
+
+        .footer-badges {
+            display: flex;
+            justify-content: center;
+            gap: 1px;
+            flex-wrap: wrap;
         }
 
-        @keyframes glitch-color-shift {
-          0% { filter: hue-rotate(0deg); }
-          20% { filter: hue-rotate(90deg); }
-          40% { filter: hue-rotate(180deg); }
-          60% { filter: hue-rotate(270deg); }
-          80% { filter: hue-rotate(360deg); }
-          100% { filter: hue-rotate(0deg); }
+        .footer-badge {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        @keyframes glitch-distortion {
-          0% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-          25% { clip-path: polygon(0 10%, 100% 15%, 100% 90%, 0 85%); }
-          50% { clip-path: polygon(0 25%, 100% 20%, 100% 75%, 0 80%); }
-          75% { clip-path: polygon(0 5%, 100% 5%, 100% 95%, 0 95%); }
-          100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+        .footer-badge:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--red);
         }
 
-        .social-links-large a {
-          position: relative;
-          overflow: hidden;
-          transform: translateZ(0);
-          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .footer-badge img {
+            height: 31px;
+            width: auto;
+            display: block;
+            filter: grayscale(0.3) contrast(1.2);
+            transition: filter 0.3s ease;
         }
 
-        .social-links-large a:hover {
-          animation: 
-            glitch-animation 0.4s infinite,
-            glitch-color-shift 0.8s infinite;
-          transform: translateY(-10px) scale(1.1);
-          background: var(--black);
-          color: var(--black);
-          box-shadow: 0 0 20px var(--red), 0 0 30px var(--yellow);
-        }
-
-        .social-links-large a:hover::before {
-          animation: glitch-distortion 0.5s infinite;
-          opacity: 0.5;
-        }
-
-        .social-links-large a:hover::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(
-            45deg, 
-            transparent 25%, 
-            rgba(255, 0, 0, 0.5) 25%, 
-            rgba(255, 0, 0, 0.5) 50%, 
-            transparent 50%, 
-            transparent 75%, 
-            rgba(255, 255, 0, 0.5) 75%
-          );
-          background-size: 10px 10px;
-          z-index: -1;
-          opacity: 0.8;
-          animation: glitch-animation 0.3s infinite reverse;
+        .footer-badge:hover img {
+            filter: grayscale(0) contrast(1.5);
         }
     </style>
 </head>
 <body>
-
     
     <!-- Animação de abertura Jackass -->
     <div class="jackass-intro">
@@ -1314,12 +1575,11 @@
                         <li><a href="#about">Sobre</a></li>
                         <li><a href="#members">Membros</a></li>
                         <li><a href="#music">Músicas</a></li>
-                        <li><a href="#gallery">Galeria</a></li>
-                        <li><a href="#comments">Recados</a></li>
+                        <li><a href="#news">Novidades</a></li> 
                     </ul>
                 </nav>
             </div>
-        </header>
+        </header> 
 
         <section class="hero">
             <div class="hero-content">
@@ -1333,70 +1593,67 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                         <a href="#"><i class="fab fa-spotify"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
+            
         </section>
 
         <section id="about">
+             
             <h2 class="section-title">Sobre a Banda</h2>
             <div class="content">
                 <div class="about-content">
                     <div class="about-text">
-                        <p>Essa Banda nasceu nas ruas sombrias de São Paulo em 2017, quando quatro almas perdidas se encontraram em um beco atrás de um bar de rock. Combinando a melancolia do grunge com a energia crua do punk, nossa música é um grito de revolta e uma lamentação sombria.</p>
-                        <p>Inspirados pelo skate culture e pela estética gótica, criamos um som único que ecoa nas vielas e nos corações dos descontentes. Nossas letras falam de solidão urbana, rebeldia e a busca por significado em um mundo caótico.</p>
-                        <p>Em 2020, lançamos nosso primeiro álbum, "Eclipse Permanente", que rapidamente ganhou cult status na cena underground. Atualmente estamos trabalhando no segundo álbum, "Apagão", previsto para lançamento no final deste ano.</p>
+                        <p>Bird Bones é uma banda brasileira de rock alternativo formada em 2025 que busca inspiração direta em grupos icônicos como Sonic Youth, Jesus Lizard, My Bloody Valentine, Dinosaur Jr. e Sex Bob-omb. A influência dessas bandas se reflete na mistura de guitarras dissonantes, camadas de efeitos que criam atmosferas densas, peso rítmico e energia crua.
+                        </p>
                     </div>
                     <div class="about-image"></div>
                 </div>
             </div>
+            
         </section>
 
         <section id="members">
+             
             <h2 class="section-title">Membros</h2>
             <div class="content">
                 <div class="members-grid">
                     <div class="member-card">
-                        <div class="member-image"></div>
-                        <h3 class="member-name">Membro</h3>
-                        <p class="member-role">...</p>
+                        <div class="member-image"><img src="Mako.jpeg" alt="Mako"></div>
+                        <h3 class="member-name">Mako</h3>
+                        <p class="member-role">Guitarrista</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     
                     <div class="member-card">
-                        <div class="member-image"></div>
-                        <h3 class="member-name">Membro</h3>
-                        <p class="member-role">...</p>
+                        <div class="member-image"><img src="Johnnys.jpeg" alt="Johnnys"></div>
+                        <h3 class="member-name">Johnnys</h3>
+                        <p class="member-role">Baixista</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                     
-                    <div class="member-card">
-                        <div class="member-image">membro</div>
-                        <h3 class="member-name">...</h3>
-                        <p class="member-role">...</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+
                     
                     <div class="member-card">
-                        <div class="member-image"></div>
-                        <h3 class="member-name">Membro</h3>
-                        <p class="member-role">...</p>
+                        <div class="member-image"><img src="Maria.jpeg" alt="Maria"></div>
+                        <h3 class="member-name">Maria</h3>
+                        <p class="member-role">Vocalista</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </section>
 
         <section id="music">
+             
             <h2 class="section-title">Músicas</h2>
             <div class="content">
                 <!-- CD Player Funcional -->
@@ -1449,9 +1706,11 @@
                     </div>
                 </div>
             </div>
+            
         </section>
 
         <section id="gallery">
+             
             <h2 class="section-title">Galeria de Fotos</h2>
             <div class="content">
                 <div class="gallery-grid">
@@ -1463,59 +1722,37 @@
                     <div class="gallery-item"></div>
                 </div>
             </div>
+            
         </section>
 
-        <section id="comments">
-            <h2 class="section-title">Recados (Ainda não funciona)</h2>
+        <!-- Central de Notícias Dinâmica -->
+        <section id="news">
+             
+            <h2 class="section-title">Novidades da Banda</h2>
             <div class="content">
-                <div class="comments-container">
-                    <form class="comment-form">
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Mensagem</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-button">Enviar Recado</button>
-                    </form>
-
-                    <div class="comment-list">
-                        <div class="comment">
-                            <div class="comment-header">
-                                <span class="comment-author">SkateGoth23</span>
-                                <span class="comment-date">10/06/2023</span>
+                <div class="news-container">
+                    <div class="news-header">
+                        <h3>Últimas Novidades da Banda</h3>
+                        <div class="content">
+                            
+                                <div class="no-news-content">
+                                    <img src="https://media1.tenor.com/m/xJVXu_8BQiMAAAAC/disperse-lesley-nielsen.gif" 
+                                         alt="Ainda não temos novidades" 
+                                         style="max-width: 400px; margin: 0 auto;">
+                                    <p style="text-align: center; font-size: 2rem; margin-top: 20px;">
+                                        ainda não temos novidades :(
+                                    </p>
+                                </div>
                             </div>
-                            <p class="comment-text">Vi vocês no show do parque de skate semana passada! F*da demais! Quando lança o álbum novo?</p>
-                        </div>
-                        
-                        <div class="comment">
-                            <div class="comment-header">
-                                <span class="comment-author">DarkRaven</span>
-                                <span class="comment-date">08/06/2023</span>
-                            </div>
-                            <p class="comment-text">"Eclipse Permanente" é a melhor música que ouvi esse ano. Vocês capturaram perfeitamente a vibe gótica com a energia punk.</p>
-                        </div>
-                        
-                        <div class="comment">
-                            <div class="comment-header">
-                                <span class="comment-author">PunkNotDead</span>
-                                <span class="comment-date">05/06/2023</span>
-                            </div>
-                            <p class="comment-text">Quando vão fazer show na capital? Tô querendo ver ao vivo essa fusão de sons que vocês fazem!</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
-        </section> 
+            
+        </section>
+        
         <div style="max-width: 300px; height: auto; position: fixed; right: 1px; bottom: 9px; z-index: 200; margin-right: 20px;" id="instagram-popup">
             <div style="position: relative;">
-                <a href="https://vm.tiktok.com/ZMSWosfec/" target="_blank">
+                <a href="https://www.instagram.com/lights_out_off?igsh=MTUwcG0zODd1bzVweQ==" target="_blank">
                     <img src="https://i.postimg.cc/hP7yFdp1/ipodwinner.gif" alt="Siga-nos no Instagram" style="max-width: 150px; height: auto;"/>
                 </a>
                 <button onclick="closePopup()" style="position: absolute; top: -10px; right: -10px; background: var(--red); color: white; border: none; border-radius: 50%; width: 25px; height: 25px; font-weight: bold; cursor: pointer; box-shadow: 0 0 5px black;">×</button>
@@ -1540,11 +1777,28 @@
         </script>
 
         <footer>
+             
             <div class="footer-content">
                 <div class="logo">BIRD BONES</div>
+                <div class="footer-badges">
+                    <a href="#" class="footer-badge" title="Trans Rights Now">
+                        <img src="https://tr4shl0rd.neocities.org/badges/transRightsNow_88x31.png" alt="Trans Rights Now Badge">
+                    </a>
+                    <a href="#" class="footer-badge" title="Apo Now">
+                        <img src="https://cyber.dabamos.de/88x31/aponow.gif" alt="Apo Now Badge">
+                    </a>
+                    <a href="#" class="footer-badge" title="Anti Nazi">
+                        <img src="https://cyber.dabamos.de/88x31/antinazi.gif" alt="Anti Nazi Badge">
+                    </a>
+                    <a href="#" class="footer-badge" title="Anarchy Now">
+                        <img src="https://cyber.dabamos.de/88x31/anarchy-now.gif" alt="Anarchy Now Badge">
+                    </a>
+                </div>
                 <p></p>
                 <p class="copyright">&copy; 2025 BIRD BONES. Todos os direitos foram roubados.</p>
             </div>
+
+            
         </footer>
     </div>
 
@@ -1575,24 +1829,6 @@
                 intro.style.display = 'none';
             }
         }, 6000);
-
-        // Efeito de distorção ao passar o mouse sobre os títulos
-        const titles = document.querySelectorAll('.section-title, .member-name');
-        titles.forEach(title => {
-            title.addEventListener('mouseover', () => {
-                title.style.textShadow = `0 0 10px ${getRandomColor()}, 0 0 20px ${getRandomColor()}`;
-                setTimeout(() => {
-                    title.style.textShadow = '';
-                }, 300);
-            });
-        });
-
-        function getRandomColor() {
-            const colors = [
-                '#FFFF00', '#FFFF99', '#FF0000', '#FFFFFF'
-            ];
-            return colors[Math.floor(Math.random() * colors.length)];
-        }
 
         // Efeito de scroll suave para links âncora
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1627,26 +1863,8 @@
             1: { 
                 title: "HEART", 
                 artist: "BIRD BONES", 
-                src: "Nirvana - Heart.mp3",
+                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
                 duration: 180 // 3 minutos
-            },
-            2: { 
-                title: "Eclipse Permanente", 
-                artist: "LIGHTS OUT", 
-                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
-                duration: 150 // 2.5 minutos
-            },
-            3: { 
-                title: "Concreto e Lágrimas", 
-                artist: "LIGHTS OUT", 
-                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
-                duration: 210 // 3.5 minutos
-            },
-            4: { 
-                title: "Veludo Negro", 
-                artist: "LIGHTS OUT", 
-                src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
-                duration: 195 // 3.25 minutos
             }
         };
         
